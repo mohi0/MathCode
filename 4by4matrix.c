@@ -121,7 +121,7 @@ Matlab_Matrix multiplyMatrix(Matlab_Matrix matrix1, Matlab_Matrix matrix2){
     for(int rowIndex = 0; rowIndex < 4; rowIndex++){
         for (int columnIndex = 0; columnIndex < 4; columnIndex++){
             for(int loopIndex = 0; loopIndex < 4; loopIndex++){
-                productMatrix.matrix[rowIndex][columnIndex] = matrix1.matrix[rowIndex][loopIndex] * matrix2.matrix[loopIndex][columnIndex];
+                productMatrix.matrix[rowIndex][columnIndex] += matrix1.matrix[rowIndex][loopIndex] * matrix2.matrix[loopIndex][columnIndex];
             }
         }
     }
