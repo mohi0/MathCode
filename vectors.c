@@ -26,6 +26,12 @@ void dotv3s(v3 *a, v3 *b, float *result){
     *result = (a->i * b->i) + (a->j * b->j) + (a->k * b->k);
 }
 
+void crossv3s(v3 *a, v3 *b, v3 *result){
+    result->i = (a->i * b->k) - (a->k * b->j);
+    result->j = - ( (a->i * b->k) - (a->k * b->i) );
+    result->k = (a->i * b->j) - (a->j * b->i);
+}
+
 void printv3(v3 *v){
     printf("\n %fi %fj %fk\n", v->i, v->j, v->k);
 }
