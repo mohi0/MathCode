@@ -7,6 +7,7 @@ As of now Matrices (of some dimensions) are supported with some generalised func
 ## Matrics
 1. Basic operations on matrices
 2. Generalised functions for matrices
+3. Parse MATLAB format matrices
 
 ## Vectors
 1. Basic vector types added
