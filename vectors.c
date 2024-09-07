@@ -22,6 +22,11 @@ void addv2s(v2 *a, v2 *b, v2 *result){
 
 }
 
+void subv2s(v2 *a, v2 *b, v2 *result){
+    result->i = a->i - b->i;
+    result->j = a->j - b->j;
+}
+
 void subv3s(v3 *a, v3 *b, v3 *result){
     result->i = a->i - b->i;
     result->j = a->j - b->j;
