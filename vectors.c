@@ -43,6 +43,19 @@ void crossv3s(v3 *a, v3 *b, v3 *result){
     result->k = (a->i * b->j) - (a->j * b->i);
 }
 
+v3 meanv3s(v3 *vectors, int count){
+    v3 mean = {0, 0, 0};
+    for (int i = 0; i < count; i++){
+        mean.i += (*(vectors + i)).i;
+        mean.j += (*(vectors + i)).j;
+        mean.k += (*(vectors + i)).k;
+    }
+    mean.i = mean.i / count ;
+    mean.j = mean.j / count ;
+    mean.k = mean.k / count ;
+    return mean;
+}
+
 void printv3(v3 *v){
     printf("\n %fi %fj %fk\n", v->i, v->j, v->k);
 }
