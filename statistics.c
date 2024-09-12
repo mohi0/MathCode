@@ -15,3 +15,9 @@ float median(float *sortedArr, int count){
     }
     return median;
 }
+
+float mode(float sortedArr[], int count){
+    float median = median(&sortedArr, count);
+    float mean = average(&sortedArr, count);
+    return 3 * median - 2 * mean;
+}
