@@ -50,6 +50,10 @@ void anglev3s(v3 *a, v3 *b, float *result){
     *result = acosf(dotProd / (magnitudeA * magnitudeB));
 }
 
+void normToPlane(v3 *a, v3 *b, v3 *norm){
+    crossv3s(a, b, norm);
+}
+
 v3 meanv3s(v3 *vectors, int count){
     v3 mean = {0, 0, 0};
     for (int i = 0; i < count; i++){
