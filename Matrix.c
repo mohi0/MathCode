@@ -21,35 +21,34 @@ void subtract(int rows, int columns, double *mat1Array, double *mat2Array, doubl
     }
 }
 
-void multiply(int rowsMat1, int colsMat1, int rowsMat2, int colsMat2, double *mat1Array, double *mat2Array, double*result){
-
+void multiply_matrix_matrix(int rowsMat1, int colsMat1, int rowsMat2, int colsMat2, double *mat1Array, double *mat2Array, double*result){
     double product = 0;
     int s = 0;
     int resIndex = 0;
     int prevRowStride = 0;
-    while(s < rowsMat1){
-
+    while(s < colsMat2){
         int prevColstride = 0;
         int startR = 0;
-        while(startR < colsMat1){
+        while(startR < colsMat2){
             int colStride = prevColstride; 
             int rowStride = prevRowStride;
             int start = 0;
             while (start < rowsMat2){
+                printf("r:%d,c:%d el1:%lf el2:%lf ", rowStride, colStride, *(mat1Array + rowStride), *(mat2Array + colStride));
                 product += *(mat1Array + rowStride) * *(mat2Array + colStride);
-                colStride += rowsMat2;
+                colStride += colsMat2;
                 rowStride++;
-
                 start++;
             }
+            *(result + resIndex) = product;
             rowStride = 0; colStride = 0;
             prevColstride++; 
-            *(result + resIndex) = product;
+            printf("\n product:%lf \t resIndex:%d \n", product, resIndex);
             startR++;
             product = 0;
             resIndex++;
         }
-        prevRowStride+=colsMat1;
+        prevRowStride+=rowsMat2;
         s++;
     }
 }
