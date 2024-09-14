@@ -11,6 +11,14 @@ float numsRMS(float nums[], int count){
     return sqrtf(sum / count);
 }
 
+float sumAll(float nums[], int count){
+    float sum = 0;
+    for (int i = 0; i < count; i++){
+        sum += nums[i];
+    }
+    return sum;
+}
+
 float nthRoot(float value, int root){
     return pow(value, 1.0 / root);
 }
