@@ -31,3 +31,11 @@ float geoMean(float nums[], int count){
     }
     return nthRoot(prod, count);
 }
+
+float harmonicMean(float nums[], int count){
+    float sum = 0;
+    for (int i = 0; i < count; i++){
+        sum += 1 / nums[i];
+    }
+    return count / sum;
+}
