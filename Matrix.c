@@ -21,6 +21,14 @@ void subtract(int rows, int columns, double *mat1Array, double *mat2Array, doubl
     }
 }
 
+void multiply_matrix_scalar(int rows, int cols, double *matArray, double value, double *result){
+    int i = 0; 
+    while(i < (rows * cols)){
+        *(result + i) = *(matArray + i) * value;
+        i++;
+    }
+}
+
 void multiply_matrix_matrix(int rowsMat1, int colsMat1, int rowsMat2, int colsMat2, double *mat1Array, double *mat2Array, double*result){
     double product = 0;
     int s = 0;
