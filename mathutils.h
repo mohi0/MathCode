@@ -47,3 +47,9 @@ float commonDifference(float seq[]){
     d = seq[2] - seq[1];
     return d;
 }
+
+float arithmaticProgNthTerm(float seq[], float n){
+    float d = commonDifference(d);
+    return seq[0] + (n - 1) * d;
+}
+
