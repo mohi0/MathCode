@@ -148,6 +148,19 @@ double Determinant_Matrix2x2(MATRIX_2x2 mat1){
     return det;
 }
 
+struct matrix3x3 transposeMatrix(struct matrix3x3 matrixToTranspose)
+{
+    struct matrix3x3 transposedMatrix;
+    for(int rowIndex = 0; rowIndex < 3; rowIndex++)
+    {
+        for (int columnIndex = 0; columnIndex < 3; columnIndex++)
+        {
+            transposedMatrix.matrix[rowIndex][columnIndex] = matrixToTranspose.matrix[columnIndex][rowIndex];
+        }
+    }
+    return transposedMatrix;
+}
+
 double Determinant_Matrix3x3(MATRIX_3x3 mat1){
     double det = mat1.matrix[1][1] * mat1.matrix[2][2] - mat1.matrix[1][2] * mat1.matrix[2][1];
     det += -1 * (mat1.matrix[1][0] * mat1.matrix[2][2] - mat1.matrix[1][2] * mat1.matrix[2][0]);
