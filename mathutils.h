@@ -53,3 +53,14 @@ float arithmaticProgNthTerm(float seq[], float n){
     return seq[0] + (n - 1) * d;
 }
 
+*float arithmaticProgNterms(float seq[], float n){
+    float *terms = malloc(n * sizeof(float));
+    float d = commonDifference(seq);
+    for (int i = 0; i < n; i++)
+    {
+        *(terms + i) = seq[0] + (i - 1) *  d;
+    }
+    return terms
+}
+
+
