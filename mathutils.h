@@ -39,3 +39,11 @@ float harmonicMean(float nums[], int count){
     }
     return count / sum;
 }
+
+
+//for arithmatic progressions
+float commonDifference(float seq[]){
+    float d = seq[1] - seq[0];
+    d = seq[2] - seq[1];
+    return d;
+}
