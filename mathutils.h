@@ -64,4 +64,13 @@ float* arithmaticProgNterms(float seq[], int n){
     return terms;
 }
 
+//geomrtric progressions ... 
+
+float geometricProNthTerm(float seq[], int n){
+    float r = seq[2]/seq[1];
+    r = seq[1]/seq[0];
+    return seq[0] * powf(r, n - 1);
+}
+
+
 
