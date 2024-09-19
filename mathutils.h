@@ -66,11 +66,23 @@ float* arithmaticProgNterms(float seq[], int n){
 
 //geomrtric progressions ... 
 
-float geometricProNthTerm(float seq[], int n){
+float commonRatio(float seq[]){    
     float r = seq[2]/seq[1];
     r = seq[1]/seq[0];
+    return r;
+}
+
+float geometricProNthTerm(float seq[], int n){
+    float r = commonRatio(seq);
     return seq[0] * powf(r, n - 1);
 }
 
+float geometricSum(float a, float r, int n){
+    if(r == 1){
+        return a * n;
+    }else{
+        return a * ( powf(r, n) - 1 ) / (r - 1);
+    }
+}
 
 
