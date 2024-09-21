@@ -61,6 +61,15 @@ void multiply_matrix_matrix(int rowsMat1, int colsMat1, int rowsMat2, int colsMa
     }
 }
 
+void matrix_transpose(int rowCount, int colCount, double *mat, double *result){
+    for (int i = 0; i < rowCount; i++){
+        for (int j = 0; j < colCount; j++){
+            printf("For Index %d \n", j * colCount + i );
+            *(result + i * colCount + j) = *(mat + j * colCount + i); 
+        }
+    }
+}
+
 
 MATRIX_3x3 Add_Matrix3x3(MATRIX_3x3 matrix1, MATRIX_3x3 matrix2){
     MATRIX_3x3 sumMatrix = matrix1;
