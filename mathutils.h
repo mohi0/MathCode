@@ -85,4 +85,9 @@ float geometricSum(float a, float r, int n){
     }
 }
 
+//sigmoid function
+float sigmoid(float z){
+    return 1 / (1 + exp(-z));
+}
+
 
