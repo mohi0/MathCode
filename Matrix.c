@@ -21,7 +21,7 @@ void subtract(int rows, int columns, double *mat1Array, double *mat2Array, doubl
     }
 }
 
-void multiply_matrix_scalar(int rows, int cols, double *matArray, double value, double *result){
+void multiplyMatrixScalar(int rows, int cols, double *matArray, double value, double *result){
     int i = 0; 
     while(i < (rows * cols)){
         *(result + i) = *(matArray + i) * value;
@@ -29,7 +29,7 @@ void multiply_matrix_scalar(int rows, int cols, double *matArray, double value, 
     }
 }
 
-void multiply_matrix_matrix(int rowsMat1, int colsMat1, int rowsMat2, int colsMat2, double *mat1Array, double *mat2Array, double*result){
+void multiplyMatrixMatrix(int rowsMat1, int colsMat1, int rowsMat2, int colsMat2, double *mat1Array, double *mat2Array, double*result){
     double product = 0;
     int s = 0;
     int resIndex = 0;
@@ -61,7 +61,7 @@ void multiply_matrix_matrix(int rowsMat1, int colsMat1, int rowsMat2, int colsMa
     }
 }
 
-void matrix_transpose(int rowCount, int colCount, double *mat, double *result){
+void matrixTranspose(int rowCount, int colCount, double *mat, double *result){
     for (int i = 0; i < rowCount; i++){
         for (int j = 0; j < colCount; j++){
             printf("For Index %d \n", j * colCount + i );
