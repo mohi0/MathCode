@@ -90,4 +90,15 @@ float sigmoid(float z){
     return 1 / (1 + exp(-z));
 }
 
+//factorial 
+int factorial(int N){
+    int pr = 1;
+    int n = N;
+    while(n > 1){
+        pr *= n;
+        n = n - 1;
+    }
+    return pr;
+}
+
 
