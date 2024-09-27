@@ -6,6 +6,10 @@ typedef struct v3{
     float i, j, k;
 } v3;
 
+void* initV(size_t elementSize, int count, int vcount){
+    return malloc(count * vcount * elementSize);
+}
+
 void magnitudev3(v3 *vec, float *result){
     *result = sqrt( (vec->i * vec->i) + (vec->j * vec->j) + (vec->k * vec->k));
 }
