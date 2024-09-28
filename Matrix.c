@@ -4,6 +4,10 @@ typedef struct matrix2x2 MATRIX_2x2;
 typedef struct matrix3x3 MATRIX_3x3;
 typedef struct matrix4x4 MATRIX_4x4;
 
+float* initMatrix(int numRows, int numCols){
+    float *m = malloc(numRows * numCols * sizeof(float));
+    return float;
+}
 
 void add(int rows, int columns, double *mat1Array, double *mat2Array, double *result){
     int i = 0; 
