@@ -23,3 +23,6 @@ As of now Matrices (of some dimensions) are supported with some generalised func
 ## Vectors
 1. Basic vector types added
 2. Basic vector operations added
+
+## Math Utils
+1. Functions to be used frequently
