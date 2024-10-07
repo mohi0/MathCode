@@ -90,6 +90,10 @@ float sigmoid(float z){
     return 1 / (1 + exp(-z));
 }
 
+float rootsOfQuadratic(a, b, c){
+    float discriminant = pow(b, 2) - 4 * a * c;
+}
+
 //factorial 
 int factorial(int N){
     int pr = 1;
