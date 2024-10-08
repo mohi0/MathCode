@@ -92,6 +92,20 @@ float sigmoid(float z){
 
 float rootsOfQuadratic(a, b, c){
     float discriminant = pow(b, 2) - 4 * a * c;
+
+    float root1 = 0f;
+    float root2 = 0f; 
+    if(discriminant > 0){
+        root1 = -b + sqrt(discriminant) / 2 * a;
+        root2 = -b - sqrt(discriminant) / 2 * a;
+    }
+    if(discriminant == 0){
+        root1 = -b / 2 * a;
+        root2 = root1;
+    }
+    if(discriminant < 0){
+        
+    }
 }
 
 //factorial 
@@ -104,5 +118,6 @@ int factorial(int N){
     }
     return pr;
 }
+
 
 
