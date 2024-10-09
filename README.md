@@ -4,9 +4,9 @@ A repository where code related to solving mathematical problems is kept
 
 As of now Matrices (of some dimensions) are supported with some generalised functions for matrices of different dimensions.
 
-> This library is unnder development and shall be used as experimental and not in production
-> New features coming soon
-> OpenCL / GPU computation will be added soon
+> This library is unnder development and shall be used as experimental and not in production    
+> New features coming soon    
+> OpenCL / GPU computation will be added soon including other paralel computation technologies.
 
 ## Compattibility
 - Compilers
