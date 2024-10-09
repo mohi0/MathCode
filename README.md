@@ -26,3 +26,6 @@ As of now Matrices (of some dimensions) are supported with some generalised func
 
 ## Math Utils
 1. Functions to be used frequently
+
+## Utils
+1. Functions that are used frequently for memory manmagement purpose or working on data structures
