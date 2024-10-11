@@ -1,3 +1,4 @@
+//nums is an array pointer, count is number of elements in the array
 float average(float *nums, int count){
   float sum = 0.0f;
   for(int i = 0; i < count; i++){
@@ -7,6 +8,7 @@ float average(float *nums, int count){
 
 }
 
+//sortedArr is array pointer of sorted array, count is the number of elements in the sorted array
 float median(float *sortedArr, int count){
     float median;
     if (count  % 2 == 0)
@@ -16,6 +18,7 @@ float median(float *sortedArr, int count){
     return median;
 }
 
+//sortedArr is the array and count is the number of elements in the array
 float mode(float sortedArr[], int count){
     float median = median(&sortedArr, count);
     float mean = average(&sortedArr, count);
