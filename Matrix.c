@@ -4,11 +4,15 @@ typedef struct matrix2x2 MATRIX_2x2;
 typedef struct matrix3x3 MATRIX_3x3;
 typedef struct matrix4x4 MATRIX_4x4;
 
+//initialise a matrix
+//returns the pointer to beginning of allocated memory 
 float* initMatrix(int numRows, int numCols){
     float *m = malloc(numRows * numCols * sizeof(float));
     return float;
 }
 
+// adds two matrices 
+// takes array pointers of two matrices and the result
 void add(int rows, int columns, double *mat1Array, double *mat2Array, double *result){
     int i = 0; 
     while(i < (rows * columns)){
@@ -17,6 +21,8 @@ void add(int rows, int columns, double *mat1Array, double *mat2Array, double *re
     }
 }
 
+//subtracts two matrices 
+//takes array pointers of two matrices and the result
 void subtract(int rows, int columns, double *mat1Array, double *mat2Array, double *result){
     int i = 0; 
     while(i < (rows * columns)){
@@ -25,6 +31,8 @@ void subtract(int rows, int columns, double *mat1Array, double *mat2Array, doubl
     }
 }
 
+//multiplies a matrix with scalar value 
+//takes the scalar value, pointers to the array (matrix)
 void multiplyMatrixScalar(int rows, int cols, double *matArray, double value, double *result){
     int i = 0; 
     while(i < (rows * cols)){
@@ -33,6 +41,9 @@ void multiplyMatrixScalar(int rows, int cols, double *matArray, double value, do
     }
 }
 
+
+//multiplies two matrices
+// takes array pointers of two matrices and the result
 void multiplyMatrixMatrix(int rowsMat1, int colsMat1, int rowsMat2, int colsMat2, double *mat1Array, double *mat2Array, double*result){
     double product = 0;
     int s = 0;
@@ -65,6 +76,7 @@ void multiplyMatrixMatrix(int rowsMat1, int colsMat1, int rowsMat2, int colsMat2
     }
 }
 
+//takes pointer to matrix
 void matrixTranspose(int rowCount, int colCount, double *mat, double *result){
     for (int i = 0; i < rowCount; i++){
         for (int j = 0; j < colCount; j++){
