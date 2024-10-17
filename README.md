@@ -27,5 +27,8 @@ As of now Matrices (of some dimensions) are supported with some generalised func
 ## Math Utils
 1. Functions to be used frequently
 
+##Math Structures
+1. Used for storing data and doing computation (similar to multidimensional arrays)
+
 ## Utils
 1. Functions that are used frequently for memory manmagement purpose or working on data structures
