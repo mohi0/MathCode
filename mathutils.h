@@ -3,6 +3,14 @@
 #include<math.h>
 
 
+typedef struct Cartesian2D {
+    float x, y;
+} Cartesian;
+
+typedef struct Polar2D {
+    float r, ar;
+} Polar2D;
+
 float numsRMS(float nums[], int count){
     float sum = 0;
     for (int i = 0; i < count; i++)
@@ -106,6 +114,15 @@ float rootsOfQuadratic(a, b, c){
     if(discriminant < 0){
         
     }
+}
+
+
+//needs testing
+Polar2D cartesinToPolar(Cartesian2D c){
+    float r = sqrt(pow(c.x, 2), pow(c.y, 2));
+    float ar = arctan(c.y/c.x);
+    Polar2D polar = { .r = r, .ar = ar };
+    return polar
 }
 
 //factorial 
