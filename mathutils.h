@@ -125,6 +125,14 @@ Polar2D cartesinToPolar(Cartesian2D c){
     return polar
 }
 
+//needs testing
+Cartesian2D cartesinToPolar(Polar p){
+    float x = p.r * cosf(p.ar);
+    float y = p.r * sinf(p.ar);
+    Cartesian2D c = { .x = x, .y = y };
+    return c
+}
+
 //factorial 
 int factorial(int N){
     int pr = 1;
