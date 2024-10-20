@@ -11,6 +11,14 @@ typedef struct Polar2D {
     float r, ar;
 } Polar2D;
 
+typedef struct Cartesian3D {
+    float x, y, z;
+} Cartesian3D;
+
+typedef struct Polar3D {
+    float r, ar, az;
+} Polar3D;
+
 float numsRMS(float nums[], int count){
     float sum = 0;
     for (int i = 0; i < count; i++)
@@ -120,7 +128,7 @@ float rootsOfQuadratic(a, b, c){
 //needs testing
 Polar2D cartesinToPolar(Cartesian2D c){
     float r = sqrt(pow(c.x, 2), pow(c.y, 2));
-    float ar = arctan(c.y/c.x);
+    float ar = atan(c.y/c.x);
     Polar2D polar = { .r = r, .ar = ar };
     return polar
 }
@@ -131,6 +139,22 @@ Cartesian2D cartesinToPolar(Polar p){
     float y = p.r * sinf(p.ar);
     Cartesian2D c = { .x = x, .y = y };
     return c
+}
+
+Polar3D cartesian3DtoPolar3D(Cartesian3D c){
+    float r = sqrt(pow(c.x, 2) + pow(c.y, 2) + pow(c.z, 2));
+    float az = atanf(c.z / sqrt(pow(c.x, 2) + pow(c.y, 2)));
+    float ar = atan(c.y / c.x);
+    Polar3D p = {.r = r, .az = az, .ar = ar};
+    return p;
+}
+
+Cartesian3D polar3DtoCartesian3D(Polar3D p){
+    float x = p.r * cosf(p.az) * cosf(p.ar);
+    float y = p.r * cosf(p.az) * sinf(p.ar);
+    float z = p.r * sinf(p.az);
+    Cartesian3D c = {.x = x, .y = y, .z = z};
+    return c;
 }
 
 //factorial 
