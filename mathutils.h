@@ -19,6 +19,10 @@ typedef struct Polar3D {
     float r, ar, az;
 } Polar3D;
 
+typedef struct Complex_{
+    float real, imag;
+} Complex_;
+
 float numsRMS(float nums[], int count){
     float sum = 0;
     for (int i = 0; i < count; i++)
@@ -106,6 +110,7 @@ float sigmoid(float z){
     return 1 / (1 + exp(-z));
 }
 
+// Needs Improvement
 float rootsOfQuadratic(a, b, c){
     float discriminant = pow(b, 2) - 4 * a * c;
 
@@ -120,7 +125,8 @@ float rootsOfQuadratic(a, b, c){
         root2 = root1;
     }
     if(discriminant < 0){
-        
+        float real1 = -b /  ( 2 * a );
+        float imag1 = sqrt(- (pow(b, 2) - 4 * a * c)) / 2 * a;
     }
 }
 
