@@ -10,24 +10,28 @@ typedef struct Cell {
   void *data;
 } Cell;
 
+typedef struct Row {
+  
+} Row;
+
 typedef struct Table {
   HeaderCol *start;
 } Table;
 
 //initialise a new table
-void newTable(){
+Table newTable(){
 }
 
 
 // add a column to table
-void addCol(){
+void addCol(Table &table){
 }
 
 // add a row to table
 void addRow(){
 }
 
-// remove a column ffrom table
+// remove a column from table
 void removeCol(){
 }
 
