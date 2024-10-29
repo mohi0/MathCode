@@ -163,6 +163,8 @@ Cartesian3D polar3DtoCartesian3D(Polar3D p){
     return c;
 }
 
+int seq(int start){ return 1; }
+
 //factorial 
 int factorial(int N){
     int pr = 1;
