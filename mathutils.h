@@ -111,23 +111,41 @@ float sigmoid(float z){
 }
 
 // Needs Improvement
-float rootsOfQuadratic(a, b, c){
+float* rootsOfQuadratic(a, b, c){
+    
     float discriminant = pow(b, 2) - 4 * a * c;
+
+    float *returnVal = malloc(sizeof(float) * ( dicriminant < 0 ? 5 : 3 ) );
+
+    *(returnVal + 0) = discriminant;
 
     float root1 = 0f;
     float root2 = 0f; 
+    
     if(discriminant > 0){
         root1 = -b + sqrt(discriminant) / 2 * a;
         root2 = -b - sqrt(discriminant) / 2 * a;
+        *(returnVal + 1) = root1;
+        *(returnVal + 2) = root2;
     }
     if(discriminant == 0){
         root1 = -b / 2 * a;
         root2 = root1;
+        *(returnVal + 1) = root1;
+        *(returnVal + 2) = root2;
     }
     if(discriminant < 0){
         float real1 = -b /  ( 2 * a );
         float imag1 = sqrt(- (pow(b, 2) - 4 * a * c)) / 2 * a;
+
+        float imag2 = - 1 * imag1 ;
+
+        *(returnVal + 1) = real1;
+        *(returnVal + 2) = imag1;
+        *(returnVal + 3) = real1;
+        *(returnVal + 4) = imag2;
     }
+    return returnVal;
 }
 
 
