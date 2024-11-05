@@ -19,9 +19,14 @@ typedef struct Polar3D {
     float r, ar, az;
 } Polar3D;
 
+typedef struct Cylindrical3D {
+    float r, ar, z;
+} Cylindrical3D;
+
 typedef struct Complex_{
     float real, imag;
 } Complex_;
+
 
 float numsRMS(float nums[], int count){
     float sum = 0;
@@ -177,6 +182,14 @@ Cartesian3D polar3DtoCartesian3D(Polar3D p){
     float x = p.r * cosf(p.az) * cosf(p.ar);
     float y = p.r * cosf(p.az) * sinf(p.ar);
     float z = p.r * sinf(p.az);
+    Cartesian3D c = {.x = x, .y = y, .z = z};
+    return c;
+}
+
+Cartesian3D cylendrical3DtoCartesian3D(Cylendrical3D cl){
+    float x = cl.r * cosf(cl.ar);
+    float y = cl.r * cosf(cl.ar);
+    float z = cl.z;
     Cartesian3D c = {.x = x, .y = y, .z = z};
     return c;
 }
