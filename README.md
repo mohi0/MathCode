@@ -7,6 +7,7 @@ As of now Matrices (of some dimensions) are supported with some generalised func
 > This library is unnder development and shall be used as experimental and not in production    
 > New features coming soon    
 > OpenCL / GPU computation will be added soon including other paralel computation technologies.
+> Vulkan / OpenCL is priority for now (because of its wide support in multiple Operating Systems)
 
 ## Compattibility
 - Compilers
