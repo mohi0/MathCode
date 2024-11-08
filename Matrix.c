@@ -192,3 +192,6 @@ double Determinant_Matrix3x3(MATRIX_3x3 mat1){
     det += mat1.matrix[1][0] * mat1.matrix[2][1] - mat1.matrix[1][1] * mat1.matrix[2][0];
     return det;
 }
+
+//TODO
+double matrix_solution(){}
