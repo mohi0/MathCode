@@ -1,0 +1,27 @@
+//code needs testing
+#version 330 core
+
+layout (std430, binding = 0) buffer inputA {
+    float matrixA[];
+};
+
+layout (std430, binding = 1) buffer inputB {
+    float matrixB[];
+};
+
+layout (std430, binding = 2) buffer OutputBuffer {
+    float outputMatrix[];
+};
+
+uniform int width;
+uniform int height;
+
+void main() {
+    int index = gl_GlobalInvocationID.x;
+    int row = index / width;
+    int col = index % width;
+
+    int offset = row * width + col;
+
+    outputMatrix[offset] = matrixA[offset] + matrixB[offset];
+}
