@@ -3,7 +3,14 @@ typedef struct Quaternion {
   float w, x, y, z;
 } Quaternion;
 
-void inverse(Quaternion q1){ 
+Quaternion inverse(Quaternion q1){ 
+  float magniSq = magnitudeSq(q1);
+  Quaternion qi = {};
+  qi.w = q1.w / magniSq;
+  qi.x = -q1.x / magniSq;
+  qi.y = -q1.y / magniSq;
+  qi.z = -q1.z / magniSq;
+  return qi;
 }
 
 float magnitudeSq(Quaternion q){
