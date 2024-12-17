@@ -2,8 +2,8 @@
 #include<math.h>
 #include "mathutils.h"
 
-float Cartesian2D(Cartesian2D p1, Cartesian2D p2){
-  return sqrtf(powf(p2.x - p1.x) + powf(p2.y - p2.1));
+float distanceCart2D(Cartesian2D p1, Cartesian2D p2){
+  return sqrtf(powf(p2.x - p1.x, 2) + powf(p2.y - p1.y, 2));
 }
 
 Cartesian2D midPointCart2D(Cartesian2D p1, Cartesian2D p2){
@@ -13,3 +13,7 @@ Cartesian2D midPointCart2D(Cartesian2D p1, Cartesian2D p2){
   return mp;
 }
 
+
+float distanceCart3D(Cartesian3D p1, Cartesian3D p2){
+  return sqrtf(powf(p2.x - p1.x, 2) + powf(p2.y - p1.y, 2) + powf(p2.z - p1.z, 2));
+}
