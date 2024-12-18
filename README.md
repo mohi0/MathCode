@@ -25,6 +25,9 @@ As of now Matrices (of some dimensions) are supported with some generalised func
 1. Basic vector types added
 2. Basic vector operations added
 
+## Quaternions
+1. Basic Quaternion operations
+
 ## Math Utils
 1. Functions to be used frequently
 
