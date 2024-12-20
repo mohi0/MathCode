@@ -26,3 +26,19 @@ Cartesian3D midPointCart3D(Cartesian3D p1, Cartesian3D p2){
   mp.z = (p1.z + p2.z) / 2;
   return mp;
 }
+
+Cartesian2D centeroidCart2D(Cartesian *points, int count){
+  float xSum = 0;
+  float ySum = 0;
+  
+  for(int i = 0; i < count; i++){
+    xSum += (points + i)->x;
+    ySum += (points + i)->y;
+  }
+  
+  Cartesian2D cp = {};
+  cp.x = xSum / count;
+  cp.y = ySum / count;
+
+  return Cartesian2D;
+}
