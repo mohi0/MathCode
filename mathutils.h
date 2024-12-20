@@ -5,7 +5,7 @@
 
 typedef struct Cartesian2D {
     float x, y;
-} Cartesian;
+} Cartesian2D;
 
 typedef struct Polar2D {
     float r, ar;
