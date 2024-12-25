@@ -27,7 +27,7 @@ Cartesian3D midPointCart3D(Cartesian3D p1, Cartesian3D p2){
   return mp;
 }
 
-Cartesian2D centeroidCart2D(Cartesian *points, int count){
+Cartesian2D centeroidCart2D(Cartesian2D *points, int count){
   float xSum = 0;
   float ySum = 0;
   
@@ -41,4 +41,22 @@ Cartesian2D centeroidCart2D(Cartesian *points, int count){
   cp.y = ySum / count;
 
   return Cartesian2D;
+}
+
+Cartesian3D centeroidCart3D(Cartesian3D *points, int count){
+  float xSum = 0;
+  float ySum = 0;
+  float zSum = 0;
+  for(int i = 0; i < count; i++){
+    xSum += (points + i)->x;
+    ySum += (points + i)->y;
+    zSum += (points + i)->z;
+  }
+  
+  Cartesian3D cp = {};
+  cp.x = xSum / count;
+  cp.y = ySum / count;
+  cp.z = zSum / count;
+
+  return Cartesian3D;
 }
