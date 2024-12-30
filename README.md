@@ -21,6 +21,10 @@ As of now Matrices (of some dimensions) are supported with some generalised func
 2. Generalised functions for matrices
 3. Parse MATLAB format matrices
 
+1. Check Point exists on Line
+2. Mid points of 3D and 2D.
+3. Centeroid of 3D and 2D points.
+
 ## Vectors
 1. Basic vector types added
 2. Basic vector operations added
@@ -33,6 +37,7 @@ As of now Matrices (of some dimensions) are supported with some generalised func
 
 ## Math Structures
 1. Used for storing data and doing computation (similar to multidimensional arrays)
+
 
 ## Utils
 1. Functions that are used frequently for memory manmagement purpose or working on data structures
