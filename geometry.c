@@ -60,3 +60,8 @@ Cartesian3D centeroidCart3D(Cartesian3D *points, int count){
 
   return Cartesian3D;
 }
+
+bool checkPointLineCart2D(float a, float b, float c, Cartesian2D pt){
+  float eval = a * pt.x + c;
+  return (pt.y * -b) == eval;
+}
