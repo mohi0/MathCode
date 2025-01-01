@@ -68,5 +68,11 @@ bool checkPointLineCart2D(float a, float b, float c, Cartesian2D pt){
 
 bool checkPointOnCircleCart2D(Cartesian2D center, Cartesian2D point, float radius){
   float cmpr = powf(point.x - center.x, 2) + powf(point.y - center.y, 2);
-  return powf(radius, 2);
+  return powf(radius, 2) == cmpr;
 }
+
+bool checkPointInCircleCart2D(Cartesian2D center, Cartesian2D point, float radius){
+  float cmpr = powf(point.x - center.x, 2) + powf(point.y - center.y, 2);
+  return powf(radius, 2) > cmpr;
+}
+
