@@ -76,3 +76,13 @@ bool checkPointInCircleCart2D(Cartesian2D center, Cartesian2D point, float radiu
   return powf(radius, 2) > cmpr;
 }
 
+bool checkPointOnSphere(Cartesian3D center, Cartesian3D point, float radius){
+  float cmpr = powf(point.x - center.x, 2) + powf(point.y - center.y, 2) + powf(point.z - center.z, 2);
+  return powf(radius, 2) == cmpr;
+}
+
+bool checkPointInSphere(Cartesian3D center, Cartesian3D point, float radius){
+  float cmpr = powf(point.x - center.x, 2) + powf(point.y - center.y, 2) + powf(point.z - center.z, 2);
+  return powf(radius, 2) > cmpr;
+}
+
