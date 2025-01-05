@@ -86,3 +86,7 @@ bool checkPointInSphere(Cartesian3D center, Cartesian3D point, float radius){
   return powf(radius, 2) > cmpr;
 }
 
+bool checkPointOnEllipseCart2D(Cartesian2D point, float h, float k, float rx, float ry){
+  float cmpr = ( powf(point.x - h, 2) / powf(rx, 2) ) + ( powf(point.y - k, 2) / powf(ry, 2) );
+  return cmpr == 1;
+}
