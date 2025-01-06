@@ -21,9 +21,12 @@ As of now Matrices (of some dimensions) are supported with some generalised func
 2. Generalised functions for matrices
 3. Parse MATLAB format matrices
 
+    
 1. Check Point exists on Line
 2. Mid points of 3D and 2D.
 3. Centeroid of 3D and 2D points.
+4. Check point exists in Circle, Ellipse and Sphere
+5. Check point exists on Circle Ellipse and Sphere
 
 ## Vectors
 1. Basic vector types 
