@@ -100,6 +100,24 @@ v3 meanv3s(v3 *vectors, int count){
     return mean;
 }
 
+float cosineSimilarity(v3 *vectors int count){
+    float dot_i = 0;
+    float dot_j = 0;
+    float dot_k = 0;
+    for(int i = 0; i < count; i++){
+        dot_i *= (*(vectors + i)).i;
+        dot_j *= (*(vectors + i)).j;
+        dot_k *= (*(vectors + i)).k;
+    }
+    float dot = dot_i + dot_j + dot_k;
+
+    float magnitude = 0;
+    for(int i = 0; i < count; i++){
+        magnitude *= sqrt( ( (*(vectors + i)).i * (*(vectors + i)).i) + ((*(vectors + i)).j * (*(vectors + i)).j) + ((*(vectors + i)).k * (*(vectors + i)).k))
+    }
+    return dot / magnitude;
+}
+
 void printv3(v3 *v){
     printf("\n %fi %fj %fk\n", v->i, v->j, v->k);
 }
