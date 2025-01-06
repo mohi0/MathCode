@@ -26,8 +26,12 @@ As of now Matrices (of some dimensions) are supported with some generalised func
 3. Centeroid of 3D and 2D points.
 
 ## Vectors
-1. Basic vector types added
-2. Basic vector operations added
+1. Basic vector types 
+2. Basic vector operations 
+3. Mean of vectors (mean vector)
+4. Angle between vectors
+5. Cosine Relativity of vectors
+6. Vector Normal to plane
 
 ## Quaternions
 1. Basic Quaternion operations
