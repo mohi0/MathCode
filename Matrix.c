@@ -6,14 +6,14 @@ typedef struct matrix4x4 MATRIX_4x4;
 
 //initialise a matrix
 //returns the pointer to beginning of allocated memory 
-float* initMatrix(int numRows, int numCols){
+float* InitMatrix(int numRows, int numCols){
     float *m = malloc(numRows * numCols * sizeof(float));
     return float;
 }
 
 // adds two matrices 
 // takes array pointers of two matrices and the result
-void add(int rows, int columns, double *mat1Array, double *mat2Array, double *result){
+void Add(int rows, int columns, double *mat1Array, double *mat2Array, double *result){
     int i = 0; 
     while(i < (rows * columns)){
         *(result + i) = *(mat1Array + i) + *(mat2Array + i);
@@ -23,7 +23,7 @@ void add(int rows, int columns, double *mat1Array, double *mat2Array, double *re
 
 //subtracts two matrices 
 //takes array pointers of two matrices and the result
-void subtract(int rows, int columns, double *mat1Array, double *mat2Array, double *result){
+void Subtract(int rows, int columns, double *mat1Array, double *mat2Array, double *result){
     int i = 0; 
     while(i < (rows * columns)){
         *(result + i) = *(mat1Array + i) - *(mat2Array + i);
@@ -33,7 +33,7 @@ void subtract(int rows, int columns, double *mat1Array, double *mat2Array, doubl
 
 //multiplies a matrix with scalar value 
 //takes the scalar value, pointers to the array (matrix)
-void multiplyMatrixScalar(int rows, int cols, double *matArray, double value, double *result){
+void MultiplyMatrixScalar(int rows, int cols, double *matArray, double value, double *result){
     int i = 0; 
     while(i < (rows * cols)){
         *(result + i) = *(matArray + i) * value;
@@ -44,7 +44,7 @@ void multiplyMatrixScalar(int rows, int cols, double *matArray, double value, do
 
 //multiplies two matrices
 // takes array pointers of two matrices and the result
-void multiplyMatrixMatrix(int rowsMat1, int colsMat1, int rowsMat2, int colsMat2, double *mat1Array, double *mat2Array, double*result){
+void MultiplyMatrixMatrix(int rowsMat1, int colsMat1, int rowsMat2, int colsMat2, double *mat1Array, double *mat2Array, double*result){
     double product = 0;
     int s = 0;
     int resIndex = 0;
@@ -77,7 +77,7 @@ void multiplyMatrixMatrix(int rowsMat1, int colsMat1, int rowsMat2, int colsMat2
 }
 
 //takes pointer to matrix
-void matrixTranspose(int rowCount, int colCount, double *mat, double *result){
+void MatrixTranspose(int rowCount, int colCount, double *mat, double *result){
     for (int i = 0; i < rowCount; i++){
         for (int j = 0; j < colCount; j++){
             printf("For Index %d \n", j * colCount + i );
@@ -93,7 +93,7 @@ MATRIX_3x3 Add_Matrix3x3(MATRIX_3x3 matrix1, MATRIX_3x3 matrix2){
     return sumMatrix;
 }
 
-MATRIX_2x2 Add_Matrix2x2(MATRIX_2x2 matrix1, MATRIX_2x2 matrix2){
+MATRIX_2x2 AddMatrix2x2(MATRIX_2x2 matrix1, MATRIX_2x2 matrix2){
     MATRIX_2x2 sumMatrix;
     for (int rowIndex = 0; rowIndex < 2; rowIndex++){
         for(int columnIndex = 0; columnIndex < 2; columnIndex++){
@@ -103,7 +103,7 @@ MATRIX_2x2 Add_Matrix2x2(MATRIX_2x2 matrix1, MATRIX_2x2 matrix2){
     return sumMatrix;
 }
 
-MATRIX_3x3 Subtract_Matrix3x3(MATRIX_3x3 matrix1, MATRIX_3x3 matrix2){
+MATRIX_3x3 SubtractMatrix3x3(MATRIX_3x3 matrix1, MATRIX_3x3 matrix2){
     MATRIX_3x3 subtractMatrix;
     for (int rowIndex = 0; rowIndex < 3; rowIndex++){
         for(int columnIndex = 0; columnIndex < 3; columnIndex++){
@@ -112,7 +112,7 @@ MATRIX_3x3 Subtract_Matrix3x3(MATRIX_3x3 matrix1, MATRIX_3x3 matrix2){
     }
     return subtractMatrix;
 }
-MATRIX_2x2 Subtract_Matrix2x2(MATRIX_2x2 matrix1, MATRIX_2x2 matrix2){
+MATRIX_2x2 SubtractMatrix2x2(MATRIX_2x2 matrix1, MATRIX_2x2 matrix2){
     MATRIX_2x2 subtractMatrix;
     for (int rowIndex = 0; rowIndex < 2; rowIndex++){
         for(int columnIndex = 0; columnIndex < 2; columnIndex++){
@@ -122,7 +122,7 @@ MATRIX_2x2 Subtract_Matrix2x2(MATRIX_2x2 matrix1, MATRIX_2x2 matrix2){
     return subtractMatrix;
 }
 
-MATRIX_3x3 Multiply_Matrix3x3(MATRIX_3x3 matrix1, MATRIX_3x3 matrix2){
+MATRIX_3x3 MultiplyMatrix3x3(MATRIX_3x3 matrix1, MATRIX_3x3 matrix2){
     MATRIX_3x3 productMatrix;
     for(int rowIndex = 0; rowIndex < 3; rowIndex++){
         for (int columnIndex = 0; columnIndex < 3; columnIndex++){
@@ -134,7 +134,7 @@ MATRIX_3x3 Multiply_Matrix3x3(MATRIX_3x3 matrix1, MATRIX_3x3 matrix2){
     }
     return productMatrix;
 }
-MATRIX_2x2 Multiply_Matrix2x2(MATRIX_2x2 matrix1, MATRIX_2x2 matrix2){
+MATRIX_2x2 MultiplyMatrix2x2(MATRIX_2x2 matrix1, MATRIX_2x2 matrix2){
     MATRIX_2x2 productMatrix;
     for(int rowIndex = 0; rowIndex < 2; rowIndex++){
         for (int columnIndex = 0; columnIndex < 2; columnIndex++){
@@ -147,7 +147,7 @@ MATRIX_2x2 Multiply_Matrix2x2(MATRIX_2x2 matrix1, MATRIX_2x2 matrix2){
     return productMatrix;
 }
 
-MATRIX_3x3 Multiply_Matrix_scalar3x3(MATRIX_3x3 matrix1, double scalar){
+MATRIX_3x3 MultiplyMatrixScalar3x3(MATRIX_3x3 matrix1, double scalar){
     MATRIX_3x3 productMatrix;
     for(int rowIndex = 0; rowIndex < 3; rowIndex++){
         for (int columnIndex = 0; columnIndex < 3; columnIndex++){
@@ -157,7 +157,7 @@ MATRIX_3x3 Multiply_Matrix_scalar3x3(MATRIX_3x3 matrix1, double scalar){
     }
     return productMatrix;
 }
-MATRIX_2x2 Multiply_Matrix_scalar2x2(MATRIX_2x2 matrix1, double scalar){
+MATRIX_2x2 MultiplyMatrixScalar2x2(MATRIX_2x2 matrix1, double scalar){
     MATRIX_2x2 productMatrix;
     for(int rowIndex = 0; rowIndex < 2; rowIndex++){
         for (int columnIndex = 0; columnIndex < 2; columnIndex++){
@@ -168,7 +168,7 @@ MATRIX_2x2 Multiply_Matrix_scalar2x2(MATRIX_2x2 matrix1, double scalar){
     return productMatrix;
 }
 
-double Determinant_Matrix2x2(MATRIX_2x2 mat1){
+double DeterminantMatrix2x2(MATRIX_2x2 mat1){
     double det = mat1.matrix[0][0] * mat1.matrix[1][1] - mat1.matrix[0][1] * mat1.matrix[1][0];
     return det;
 }
@@ -186,7 +186,7 @@ struct matrix3x3 transposeMatrix(struct matrix3x3 matrixToTranspose)
     return transposedMatrix;
 }
 
-double Determinant_Matrix3x3(MATRIX_3x3 mat1){
+double DeterminantMatrix3x3(MATRIX_3x3 mat1){
     double det = mat1.matrix[1][1] * mat1.matrix[2][2] - mat1.matrix[1][2] * mat1.matrix[2][1];
     det += -1 * (mat1.matrix[1][0] * mat1.matrix[2][2] - mat1.matrix[1][2] * mat1.matrix[2][0]);
     det += mat1.matrix[1][0] * mat1.matrix[2][1] - mat1.matrix[1][1] * mat1.matrix[2][0];
