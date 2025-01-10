@@ -3,8 +3,13 @@ typedef struct Quaternion {
   float w, x, y, z;
 } Quaternion;
 
+float MagnitudeSqQua(Quaternion q){
+  float magnitude = q.w * q.w + q.x * q.x + q.y * q.y + q.z * q.z;
+  return magnitude; 
+}
+
 Quaternion InverseQua(Quaternion q1){ 
-  float magniSq = magnitudeSq(q1);
+  float magniSq = magnitudeSqQua(q1);
   Quaternion qi = {};
   qi.w = q1.w / magniSq;
   qi.x = -q1.x / magniSq;
@@ -20,11 +25,6 @@ Quaternion ConjugateQua(Quaternion q){
   qc.y = -q.y;
   qc.z = -q.z;
   return qc;
-}
-
-float MagnitudeSqQua(Quaternion q){
-  float magnitude = q.w * q.w + q.x * q.x + q.y * q.y + q.z * q.z;
-  return magnitude; 
 }
 
 Quaternion MultiplyQua(Quaternion q1, Quaternion q2){
