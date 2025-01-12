@@ -193,5 +193,14 @@ double DeterminantMatrix3x3(MATRIX_3x3 mat1){
     return det;
 }
 
+float maxInMatrix(int rows, int cols, float *arr){
+    float max = 0;
+    for(int i = 0; i < rows * cols; i++){
+        if( *(arr + i) > max ){
+            max = *(arr + i);
+        }
+    }
+    return max;
+}
 //TODO
 double matrix_solution(){}
