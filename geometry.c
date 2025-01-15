@@ -61,6 +61,17 @@ Cartesian3D centeroidCart3D(Cartesian3D *points, int count){
   return Cartesian3D;
 }
 
+float areaPoints2D(Cartesian3D *points, int count){
+  float area = 0;
+  for(int i = 0; i < count - 1; i++){
+    float yAvg = ( *(points + i).y + *(points + i + 1).y ) / 2;
+    float xAvg = ( *(points + i).x + *(points + i + 1).x ) / 2;
+    area += yAvg * xAvg;
+  }
+  area += ( (*(points + count - 1).x + *(points + 0).x) / 2 ) * ( (*(points + count - 1).y + *(points + 0).y) / 2 );
+  return area;
+}
+
 bool checkPointLineCart2D(float a, float b, float c, Cartesian2D pt){
   float eval = a * pt.x + c;
   return (pt.y * -b) == eval;
