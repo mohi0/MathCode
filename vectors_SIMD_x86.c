@@ -13,7 +13,7 @@ __m128 addVecs_m128(__m128 *vecs, int count){
 
 __m128 meanVecs_m128(__m128 *vecs, int count){
   __m128 vecSum = addVecs_m128(vecs, count);
-  __m128 div = _mm_set1_ps(2);
+  __m128 div = _mm_set1_ps(count);
   vecSum = _mm_div_ps(vecSum, div);
   return vecSum;
 }
