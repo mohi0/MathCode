@@ -16,4 +16,15 @@ __m128 meanVecs_m128(__m128 *vecs, int count){
   __m128 div = _mm_set1_ps(2);
   vecSum = _mm_div_ps(vecSum, div);
   return vecSum;
-} 
+}
+
+__m128 dotProduct_m128(__m128  *vecs, int count){
+  __m128 vecDot = _mm_set_ps(1.0, 1.0, 1.0, 1.0);
+  for(int i = 0; i < count; i++){
+    vecDot = _mm_mul_ps(vecDot, (*(vecs + i)));
+  }
+}
+
+float cosineSimilarity(__m128 *vecs, int count){
+  
+}
