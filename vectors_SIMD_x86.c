@@ -23,6 +23,7 @@ __m128 dotProduct_m128(__m128  *vecs, int count){
   for(int i = 0; i < count; i++){
     vecDot = _mm_mul_ps(vecDot, (*(vecs + i)));
   }
+  return vecDot;
 }
 
 float cosineSimilarity(__m128 *vecs, int count){
