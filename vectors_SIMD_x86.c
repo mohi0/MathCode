@@ -29,6 +29,16 @@ float dotProduct_m128(__m128  *vecs, int count){
   return _mm_cvtss_f32(vecDot);
 }
 
+float magnitudeVecs_128(__m128 *vecs, int count){
+  float magnitude = 0;
+  for(int i = 0; i < count; i++){
+    __m128 ve = (*(vecs + i));
+    ve = _mm_mul_ps(ve, ve);
+    magnitude += sqrt(ve[0] + ve[1] + ve[2] + ve[3]);
+  }
+  return magnitude;
+}
+
 float cosineSimilarity(__m128 *vecs, int count){
   
 }
