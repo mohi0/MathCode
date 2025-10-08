@@ -51,17 +51,17 @@ float cosineSimilarity(__m128 *vecs, int count){
 }
 
 
-_m128 crossProduct(_m128 *vec1, _m128 *vec2){
-  _m128 v1 = *vec1;
-  _m128 v2 = *vec2;
+__m128 crossProduct(__m128 *vec1, __m128 *vec2){
+  __m128 v1 = *vec1;
+  __m128 v2 = *vec2;
   const int YZXW = _MM_SHUFFLE(3, 0, 2, 1);
-  _m128 v1_yzx = _mm_shuffle_ps(v1, v1, YZXW);
+  __m128 v1_yzx = _mm_shuffle_ps(v1, v1, YZXW);
   const int ZXYW = _MM_SHUFFLE(3, 1, 0, 2);
-  _m128 v2_zxy = _mm_shuffle_ps(v2, v2, ZXYW);
-  _m128 mul1 = _mm_mul_ps(v1_yzx, v2_zxy);
-  _m128 v1_zxy = _mm_shuffle_ps(v1, v1, ZXYW);
-  _m128 v2_yzx = _mm_shuffle_ps(v2, v2, YZXW);
-  _m128 mul2 = _mm_mul_ps(v1_zxy, v2_yzx);
-  _m128 result = _mm_sub_ps(mul1, mul2);
+  __m128 v2_zxy = _mm_shuffle_ps(v2, v2, ZXYW);
+  __m128 mul1 = _mm_mul_ps(v1_yzx, v2_zxy);
+  __m128 v1_zxy = _mm_shuffle_ps(v1, v1, ZXYW);
+  __m128 v2_yzx = _mm_shuffle_ps(v2, v2, YZXW);
+  __m128 mul2 = _mm_mul_ps(v1_zxy, v2_yzx);
+  __m128 result = _mm_sub_ps(mul1, mul2);
   return result;
 }
